@@ -31,6 +31,7 @@ const config = {
   igScrapeAppId: process.env.IG_SCRAPE_APP_ID || '936619743392459',
   igSessionId: process.env.IG_SESSION_ID || '',
   cacheFile: path.resolve(rootDir, process.env.CACHE_FILE || './data/recipes.json'),
+  seedFile: path.resolve(rootDir, process.env.SEED_FILE || './data/seed-recipes.json'),
   cacheTtlMinutes: Math.max(1, Number(process.env.CACHE_TTL_MINUTES || 120)),
 };
 
