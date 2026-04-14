@@ -1,4 +1,5 @@
 const http = require('http');
+const fs = require('fs');
 const { URL } = require('url');
 const { config, assertRequired } = require('./config');
 const { scrapeProfileMedia } = require('./instagramScraper');
@@ -21,6 +22,17 @@ function json(res, status, payload) {
 
 function currentCache() {
   return readCache(config.cacheFile);
+}
+
+function readSeedRecipes() {
+  try {
+    if (!fs.existsSync(config.seedFile)) return [];
+    const raw = fs.readFileSync(config.seedFile, 'utf8');
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed?.recipes) ? parsed.recipes : [];
+  } catch {
+    return [];
+  }
 }
 
 async function refreshCache(force = false) {
@@ -56,6 +68,22 @@ async function refreshCache(force = false) {
         refreshed: false,
         stale: true,
         warning: `Scrape failed, using existing cache: ${err.message}`,
+      };
+    }
+    const seedRecipes = readSeedRecipes();
+    if (seedRecipes.length > 0) {
+      const seedCache = {
+        source: 'seed-fallback',
+        username: config.igUsername,
+        updatedAt: new Date().toISOString(),
+        count: seedRecipes.length,
+        recipes: seedRecipes,
+      };
+      return {
+        cache: seedCache,
+        refreshed: false,
+        stale: true,
+        warning: `Scrape failed, using seed fallback: ${err.message}`,
       };
     }
     throw err;
