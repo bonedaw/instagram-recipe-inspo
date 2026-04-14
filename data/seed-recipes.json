@@ -1,0 +1,40 @@
+{
+  "recipes": [
+    {
+      "id": "seed-1",
+      "title": "Kramig kycklingpasta",
+      "caption": "Snabb vardagspasta med kyckling, vitlok och gradde.",
+      "tags": ["pasta", "kyckling", "snabbt"],
+      "ingredients": ["kyckling", "pasta", "vitlok", "gradde"],
+      "steps": [],
+      "permalink": "https://www.instagram.com/the.real.cg.lagar.mat/",
+      "mediaType": "IMAGE",
+      "mediaUrl": "",
+      "timestamp": "2026-01-01T12:00:00.000Z"
+    },
+    {
+      "id": "seed-2",
+      "title": "Ugnsbakad lax med citron",
+      "caption": "Lax med citron, dill och potatis i ugn.",
+      "tags": ["fisk", "lax", "middag"],
+      "ingredients": ["lax", "citron", "potatis", "dill"],
+      "steps": [],
+      "permalink": "https://www.instagram.com/the.real.cg.lagar.mat/",
+      "mediaType": "IMAGE",
+      "mediaUrl": "",
+      "timestamp": "2026-01-02T12:00:00.000Z"
+    },
+    {
+      "id": "seed-3",
+      "title": "Vegetarisk linsgryta",
+      "caption": "Mustig linsgryta med tomat och kokosmjolk.",
+      "tags": ["vegetarisk", "lins", "gryta"],
+      "ingredients": ["linser", "tomat", "kokosmjolk", "lok"],
+      "steps": [],
+      "permalink": "https://www.instagram.com/the.real.cg.lagar.mat/",
+      "mediaType": "IMAGE",
+      "mediaUrl": "",
+      "timestamp": "2026-01-03T12:00:00.000Z"
+    }
+  ]
+}
