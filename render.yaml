@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: cg-recipe-api
+    runtime: node
+    rootDir: instagram-recipe-inspo
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: IG_USERNAME
+        value: the.real.cg.lagar.mat
+      - key: IG_MEDIA_LIMIT
+        value: 40
+      - key: IG_SCRAPE_APP_ID
+        value: 936619743392459
+      - key: CACHE_FILE
+        value: ./data/recipes.json
+      - key: CACHE_TTL_MINUTES
+        value: 120
